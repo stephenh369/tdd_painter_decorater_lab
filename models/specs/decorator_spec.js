@@ -61,4 +61,13 @@ describe("Decorator", function() {
         assert.strictEqual(actual, 0);
     });
 
+    it("should remove empty paint from stock", function() {
+        decorator.addPaint(paint1);
+        decorator.paintRoom(room);
+        paint1.empty();
+        decorator.removeEmptyPaint(paint1);
+        const actual = decorator.paintStock;
+        assert.deepStrictEqual(actual, []);
+    });
+
 });
