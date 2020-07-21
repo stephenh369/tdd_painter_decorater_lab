@@ -14,7 +14,7 @@ describe("Room", function() {
     });
 
     it("should be able to be painted", function() {
-        room.paintRoom();
+        room.roomPainted();
         const actual = room.painted;
         assert.strictEqual(actual, true);
     });
