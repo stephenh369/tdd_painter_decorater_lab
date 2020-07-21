@@ -5,13 +5,17 @@ const Room = require("../room");
 
 describe("Decorator", function() {
     let decorator;
-    let paint;
+    let paint1;
+    let paint2;
+    let paints;
+    let room;
 
     beforeEach(function() {
         paint1 = new Paint(15);
         paint2 = new Paint(10);
         paints = [paint1, paint2]
         decorator = new Decorator();
+        room = new Room(15);
     });
 
     it("should add paint", function() {
@@ -26,9 +30,15 @@ describe("Decorator", function() {
         assert.strictEqual(actual, 15);
     });
 
-    it("return paint litres", function() {
+    it("should return paint litres", function() {
         const actual = decorator.paintLitres;
         assert.strictEqual(actual, 0);
-    })
+    });
+
+    it("should determine if room can be painted", function() {
+        decorator.addPaint(paint1);
+        const actual = decorator.canPaintRoom(room);
+        assert.strictEqual(actual, true);
+    });
 
 });
