@@ -26,4 +26,9 @@ describe("Decorator", function() {
         assert.strictEqual(actual, 15);
     });
 
+    it("return paint litres", function() {
+        const actual = decorator.paintLitres;
+        assert.strictEqual(actual, 0);
+    })
+
 });
