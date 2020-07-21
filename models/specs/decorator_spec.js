@@ -20,4 +20,10 @@ describe("Decorator", function() {
         assert.deepStrictEqual(actual, [paint1]);
     });
 
+    it("should add paint litres", function() {
+        decorator.addPaint(paint1);
+        const actual = decorator.paintLitres;
+        assert.strictEqual(actual, 15);
+    });
+
 });
