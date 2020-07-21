@@ -13,5 +13,10 @@ Decorator.prototype.canPaintRoom = function(room) {
     };
     return false;
 };
+Decorator.prototype.paintRoom = function(room) {
+    if (this.paintLitres >= room.area) {
+       return room.painted = true;
+    };
+};
 
 module.exports = Decorator;

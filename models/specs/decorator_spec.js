@@ -41,4 +41,10 @@ describe("Decorator", function() {
         assert.strictEqual(actual, true);
     });
 
+    it("should paint room", function() {
+        decorator.addPaint(paint1);
+        const actual = decorator.paintRoom(room);
+        assert.strictEqual(actual, true);
+    });
+
 });
