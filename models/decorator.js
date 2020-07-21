@@ -7,6 +7,10 @@ Decorator.prototype.addPaint = function(paint) {
     this.paintStock.push(paint);
     this.paintLitres += paint.litres;
 };
+Decorator.prototype.removePaint = function(paint) {
+this.paintStock.splice(this.paintStock.indexOf(paint), 1);
+this.paintLitres -= paint.litres;
+};
 Decorator.prototype.canPaintRoom = function(room) {
     if (this.paintLitres >= room.area) {
         return true;

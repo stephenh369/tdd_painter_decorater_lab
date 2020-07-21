@@ -24,6 +24,13 @@ describe("Decorator", function() {
         assert.deepStrictEqual(actual, [paint1]);
     });
 
+    it("should remove paint", function() {
+        decorator.addPaint(paint1);
+        decorator.removePaint(paint1);
+        const actual = decorator.paintStock;
+        assert.deepStrictEqual(actual, []);
+    });
+
     it("should add paint litres", function() {
         decorator.addPaint(paint1);
         const actual = decorator.paintLitres;
@@ -52,7 +59,6 @@ describe("Decorator", function() {
         decorator.paintRoom(room);
         const actual = decorator.paintLitres;
         assert.strictEqual(actual, 0);
-
     });
 
 });
