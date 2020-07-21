@@ -18,4 +18,10 @@ describe("Paint", function() {
         const actual = false;
         assert.strictEqual(actual, false);
     });
+
+    it("empty paint", function() {
+        paint.empty();
+        const actual = paint.litres;
+        assert.strictEqual(actual, 0);
+    })
 })
